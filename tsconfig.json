@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": [ "es2015", "dom" ],
+    "types": ["@types/jest"],
+    "typeRoots": ["./src/**.d.ts", "./typings/**/*.d.ts"],
+    "jsx": "react",
+  },
+  "include": [
+    "./src/**/*",
+    "./node_modules/microbundle/index.d.ts"
+  ],
+  "exclude": [
+    "./src/test/**/*",
+  ]
+}

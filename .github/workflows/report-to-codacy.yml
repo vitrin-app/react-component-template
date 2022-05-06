@@ -1,0 +1,40 @@
+name: Report Coverage to Codacy
+on:
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  check-env:
+    runs-on: ubuntu-latest
+    outputs:
+      check: ${{ steps.check.outputs.check }}
+    steps:
+      - id: check
+        env:
+          CODACY_PROJECT_TOKEN: '${{ secrets.CODACY_PROJECT_TOKEN }}'
+        if: "${{ env.CODACY_PROJECT_TOKEN != ''}}"
+        run: echo "::set-output name=check::true"
+  do:
+    needs: [check-env]
+    if: needs.check-env.outputs.check == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate Coverage Report
+        run: npm run coverage
+
+      - name: Upload to Codacy
+        uses: codacy/codacy-coverage-reporter-action@master
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info

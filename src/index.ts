@@ -1,0 +1,1 @@
+export { SlowCounter } from './component'
