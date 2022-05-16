@@ -22,6 +22,7 @@ steps:
       prompt: What is your email address?
 
   - update: preview/App.tsx
+  - update: src/index.ts
   - update: src/component/index.tsx
   - update: src/test/some.test.tsx
   - update: CODE_OF_CONDUCT.md
