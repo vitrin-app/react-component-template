@@ -1,0 +1,32 @@
+steps:
+  - read: component_name
+    prompt: What is the name of your component? (Uppercase)
+
+  - read: package_name
+    prompt: What is the name of the package?
+    default:
+      from: path.rootdir
+
+  - read: remote_url
+    from: git.remote_url
+
+  - read: owner_name
+    from: git.author_name
+    fallback:
+      prompt: What is your name?
+
+  - read: owner_email
+    from: git.author_email
+    fallback:
+      prompt: What is your email address?
+
+  - update: preview/App.tsx
+  - update: src/component/index.tsx
+  - update: src/test/some.test.tsx
+  - update: CODE_OF_CONDUCT.md
+  - update: LICENSE
+  - remove: README.md
+  - copy: README.tmpl.md
+    to: README.md
+  - remove: README.tmpl.md
+  - remove: .tmplr.yml

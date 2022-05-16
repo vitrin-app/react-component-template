@@ -1,5 +1,5 @@
 {
-  "name": "COMPONENT",
+  "name": "{{ tmplr.package_name }}",
   "version": "0.1.0",
   "description": "A React Component",
   "source": "src/index.ts",

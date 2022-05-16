@@ -4,11 +4,11 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { SlowCounter } from '../component'
+import { {{ tmplr.component }} } from '../component'
 
 
 test('renders on the screen.', async () => {
-  render(<SlowCounter/>)
+  render(<{{ tmplr.component }}/>)
   expect(screen.getByRole('counter').textContent).toBe('0')
   expect(screen.getByRole('incr').textContent).toBe('+')
 })
@@ -16,7 +16,7 @@ test('renders on the screen.', async () => {
 
 test('increases the counter.', async () => {
   const user = userEvent.setup({ delay: null })
-  render(<SlowCounter/>)
+  render(<{{ tmplr.component }}/>)
 
   await user.click(screen.getByRole('incr'))
 
@@ -27,7 +27,7 @@ test('increases the counter.', async () => {
 
 test('only increases when clicking slowly.', async () => {
   const user = userEvent.setup({ delay: null })
-  render(<SlowCounter/>)
+  render(<{{ tmplr.component }}/>)
 
   await user.click(screen.getByRole('incr'))
 

@@ -1,1 +1,1 @@
-export { SlowCounter } from './component'
+export { {{ tmplr.component }} } from './component'

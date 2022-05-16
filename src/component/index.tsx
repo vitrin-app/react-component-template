@@ -4,7 +4,7 @@ import { useDebounce, useToggle } from 'react-use'
 import styles from './index.module.css'
 
 
-export const SlowCounter = () => {
+export const {{ tmplr.component }} = () => {
   const [raw, setRaw] = useState(0)
   const [counter, set] = useState(0)
   const [tooFast, flag] = useToggle(false)

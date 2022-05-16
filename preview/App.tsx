@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { SlowCounter } from '../src'
+import { {{ tmplr.component_name }} } from '../src'
 
 
 export const App = () => (
-  <SlowCounter/>
+  <{{ tmplr.component_name }}/>
 )
 
