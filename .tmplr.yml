@@ -27,6 +27,7 @@ steps:
   - update: src/test/some.test.tsx
   - update: CODE_OF_CONDUCT.md
   - update: LICENSE
+  - update: package.json
   - remove: README.md
   - copy: README.tmpl.md
     to: README.md

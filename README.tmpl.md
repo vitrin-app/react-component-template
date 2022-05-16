@@ -10,7 +10,7 @@ import React from 'react'
 
 
 export const App = () => (
-  <{{ tmplr.component_name }}/>
+  <{{ tmplr.component }}/>
 )
 ```
 
