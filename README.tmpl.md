@@ -1,4 +1,4 @@
-# {{ tmplr.component_name }}
+# `<{{ tmplr.component }}/>`
 
 This is a React component.
 

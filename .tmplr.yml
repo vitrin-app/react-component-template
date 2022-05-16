@@ -1,5 +1,5 @@
 steps:
-  - read: component_name
+  - read: component
     prompt: What is the name of your component? (Uppercase)
 
   - read: package_name

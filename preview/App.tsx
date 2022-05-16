@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { {{ tmplr.component_name }} } from '../src'
+import { {{ tmplr.component }} } from '../src'
 
 
 export const App = () => (
-  <{{ tmplr.component_name }}/>
+  <{{ tmplr.component }}/>
 )
 
