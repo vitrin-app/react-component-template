@@ -9,6 +9,7 @@ steps:
 
   - read: remote_url
     from: git.remote_url
+    fallback: '{{ git remote url }}'
 
   - read: owner_name
     from: git.author_name
