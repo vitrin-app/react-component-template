@@ -5,7 +5,7 @@ steps:
   - read: package_name
     prompt: What is the name of the package?
     default:
-      from: path.rootdir
+      from: filesystem.rootdir
 
   - read: remote_url
     from: git.remote_url
